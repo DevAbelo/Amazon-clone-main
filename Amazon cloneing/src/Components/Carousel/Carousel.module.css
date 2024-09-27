@@ -1,0 +1,43 @@
+.hero__img {
+  position: relative;
+}
+
+.hero__img::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 225, 0),
+    rgba(255, 255, 255)
+  );
+}
+
+.carousel__prev {
+  z-index: 2;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  left: 0;
+  top: 0;
+  color: #292929;
+  font-size: 26px;
+  bottom: 50%;
+  margin-top: 0;
+  padding: 5px;
+  text-shadow: 2px 2px;
+}
+.carousel__next {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  top: 0;
+  right: 0;
+  bottom: 50%;
+  color: #292929;
+  font-size: 26px;
+  margin-top: 0;
+  padding: 5px;
+}

@@ -1,0 +1,279 @@
+/* Existing styles */
+
+.header__outerContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__container {
+  background-color: #131921;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  height: 70px;
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+}
+
+.logo__container img {
+  width: 100px;
+  padding-top: 5px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+
+.delivery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  line-height: 1.01;
+  margin-bottom: 5px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.delivery span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.delivery p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  width: 100%;
+  flex: 1;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.search select,
+.search input {
+  padding: 14px;
+  font-weight: bold;
+  outline: 2px solid white;
+}
+
+.search select {
+  border: none;
+  background-color: #ccc;
+}
+
+.search input {
+  border: 1px solid white;
+  width: 100%;
+  margin-right: -2px;
+  border: none;
+  font-weight: bold;
+}
+
+.search svg {
+  background-color: #febd69;
+  padding: 10px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search svg:hover {
+  background-color: #d49644;
+}
+
+.search:focus-within {
+  border: 2px solid rgb(255, 153, 0);
+}
+
+.order__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+  gap: 10px;
+  font-family: inherit;
+}
+
+.order__container a {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.order__container p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.language,
+.cart {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  color: white;
+  /* margin-right: 15px; */
+  font-family: Arial, sans-serif;
+}
+
+.language select {
+  border: none;
+  background-color: #131921;
+  color: white;
+  font-size: 14px;
+}
+
+.language img {
+  width: 20px;
+}
+
+.cart {
+  position: relative;
+  margin-right: 15px;
+}
+
+.cart span {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  /* background-color: #ddac6b67; */
+  border-radius: 50%;
+  padding: 3px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f08804;
+}
+
+.order__container a,
+.delivery,
+.logo__container a,
+.lower__container ul li {
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+}
+
+.order__container a:hover,
+.delivery:hover,
+.logo__container a:hover,
+.lower__container ul li:hover {
+  border: 1px solid white;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+.lower__container {
+  background-color: #232f3e;
+  color: #fff;
+}
+
+.lower__container ul {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+}
+
+.lower__container ul li {
+  padding: 8px;
+}
+
+.lower__container ul li:first-child {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.lower__container ul li:last-child {
+  margin-left: auto;
+}
+
+.delivery__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.delivery__container p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.delivery__container span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 450px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 20px !important;
+  line-height: 20px !important;
+}
+
+.delivery__container:hover .dropdown {
+  display: block;
+}
+
+.dropdown p {
+  margin: 0 0 10px;
+}
+
+.dropdown button {
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 18px;
+  font-size: 14px;
+}
+
+.dropdown button.changeAddress {
+  background-color: #febd69;
+  border: none;
+  color: #000;
+}
+
+.dropdown button:hover {
+  background-color: #d49644;
+}
+
+@media screen and (max-width: 768px) {
+  .header__container {
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+    padding: 14px;
+  }
+  .lower__container ul li:not(:first-child) {
+    display: none;
+  }
+  .language {
+    display: none;
+  }
+}
