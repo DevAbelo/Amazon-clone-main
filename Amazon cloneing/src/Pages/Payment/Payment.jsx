@@ -8,10 +8,11 @@ import { useState } from "react";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
 import { axiosInstance } from "../../API/axios";
 import { ClipLoader } from "react-spinners";
-import { db } from "../../Utility/firebase";
-import { useNavigate } from "react-router-dom";
-import { Type } from "../../Utility/action.type";
+import { db } from "../../Utility/firebase"; // Importing Firebase for storing order data
+import { useNavigate } from "react-router-dom"; // Importing useNavigate hook for routing
+import { Type } from "../../Utility/action.type"; // Importing action types for the reducer
 
+// Functional component for handling the payment process
 function Payment() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
   console.log(user);

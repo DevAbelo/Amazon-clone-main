@@ -6,10 +6,13 @@ import { DataContext } from "../../Components/Data Provider/DataProvider";
 import { db } from "../../Utility/firebase";
 import ProductCard from "../../Components/Product/ProductCard";
 
+
+// Functional component to display user orders
 function Orders() {
   const [{ user }, dispatch] = useContext(DataContext);
   const [orders, setOrders] = useState([]);
 
+  // Fetch orders from Firebase whenever the user changes
   useEffect(() => {
     if (user) {
       db.collection("users")
@@ -18,15 +21,15 @@ function Orders() {
         .orderBy("created", "desc")
         .onSnapshot((snapshot) => {
           console.log(snapshot);
-
+           // Map through the snapshot and update the orders state with the fetched data
           setOrders(
             snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))
           );
         });
     } else {
-      setOrders([]);
+      setOrders([]);  // If there's no user, clear the orders
     }
-  }, []);
+  }, [user]);
 
   return (
     <LayOut>
@@ -61,4 +64,4 @@ function Orders() {
   );
 }
 
-export default Orders;
+export default Orders; // Exporting the component for use in other parts of the application

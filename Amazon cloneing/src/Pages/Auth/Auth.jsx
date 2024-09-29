@@ -1,21 +1,21 @@
-import React, { useContext, useState } from "react";
-import classes from "./Auth.module.css";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../../Utility/firebase";
+import React, { useContext, useState } from "react"; // Importing React and necessary hooks
+import classes from "./Auth.module.css";  // Importing CSS module for authentication page styles
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Importing routing components
+import { auth } from "../../Utility/firebase"; // Importing Firebase authentication instance
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { DataContext } from "../../Components/Data Provider/DataProvider";
-import { Type } from "../../Utility/action.type";
-import { ClipLoader } from "react-spinners";
+} from "firebase/auth"; // Importing Firebase authentication methods
+import { DataContext } from "../../Components/Data Provider/DataProvider"; // Importing context for global state management
+import { Type } from "../../Utility/action.type"; // Importing action types for the reducer
+import { ClipLoader } from "react-spinners";   // Importing a loading spinner component
 
 function Auth() {
   
   const navigate = useNavigate();
   const navStateData = useLocation();
   console.log(navStateData);
-
+// State to track email, password, errors, and loading for sign in/up
   // console.log(user)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +26,7 @@ function Auth() {
 
     // Accessing global state (user) and dispatch from context
     const [{ user }, dispatch] = useContext(DataContext);
-
+  // State to track email, password, errors, and loading for sign in/up
   const authHandler = async (e) => {
     e.preventDefault();
     console.log(e.target.name);
@@ -154,4 +154,4 @@ function Auth() {
   );
 }
 
-export default Auth;
+export default Auth;  // Exporting the component for use in other parts of the application

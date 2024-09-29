@@ -74,7 +74,7 @@ function Header() {
               )}
             </div>
           </Link>
-          <Link to='/order'>
+          <Link to='/orders'>
             <div>
               <p>Returns</p>
               <span>& Orders</span>
